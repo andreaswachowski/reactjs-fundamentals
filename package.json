@@ -6,7 +6,7 @@
   "scripts": {
     "production": "webpack -p",
     "start": "webpack-dev-server",
-    "lint": "eslint app/**/*.js",
+    "lint": "eslint webpack.config.js app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

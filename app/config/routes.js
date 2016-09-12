@@ -10,7 +10,7 @@ var ConfirmBattleContainer = require('../containers/ConfirmBattleContainer');
 var Main = require('../components/Main');
 var Home = require('../components/Home');
 
-var routes = (
+var routes =
   <Router history={hashHistory}>
     <Route path='/' component={Main} >
       <IndexRoute component={Home} />
@@ -18,7 +18,6 @@ var routes = (
       <Route path='playerTwo/:playerOne' header='Player Two' component={PromptContainer} />
       <Route path='battle' component={ConfirmBattleContainer} />
     </Route>
-  </Router>
-);
+  </Router>;
 
 module.exports = routes;

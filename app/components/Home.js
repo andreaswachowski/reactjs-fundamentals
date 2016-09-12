@@ -13,7 +13,7 @@ var Home = React.createClass({
           <button type='button' className='btn btn-lg btn-success'>Get Started</button>
         </Link>
       </div>
-    )
+    );
   }
 });
 
