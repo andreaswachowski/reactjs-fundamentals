@@ -4,6 +4,7 @@ var Link = ReactRouter.Link;
 var PropTypes = React.PropTypes;
 var styles = require('../styles').transparentBg;
 var UserDetails = require('./UserDetails');
+var UserDetailsWrapper = require('./UserDetailsWrapper');
 
 function ConfirmBattle(props) {
   return props.isLoading === true
@@ -11,14 +12,12 @@ function ConfirmBattle(props) {
     : <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
       <h1>Confirm Players</h1>
       <div className='col-sm-8 col-sm-offset-2'>
-        <div className='col-sm-6'>
-          <p className='lead'>Player 1</p>
+        <UserDetailsWrapper header='Player One'>
           <UserDetails info={props.playersInfo[0]} />
-        </div>
-        <div className='col-sm-6'>
-          <p className='lead'>Player 2</p>
+        </UserDetailsWrapper>
+        <UserDetailsWrapper header='Player Two'>
           <UserDetails info={props.playersInfo[1]} />
-        </div>
+        </UserDetailsWrapper>
       </div>
       <div className='col-sm-8 col-sm-offset-2'>
         <div className='col-sm-12' style={styles.space}>
