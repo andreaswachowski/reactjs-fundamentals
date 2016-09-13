@@ -5,6 +5,7 @@ var styles = require('../styles');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
 var UserDetails = require('./UserDetails');
 var MainContainer = require('./MainContainer');
+var Loading = require('./Loading');
 var PropTypes = React.PropTypes;
 
 function StartOver(props) {
@@ -17,7 +18,7 @@ function StartOver(props) {
 
 function Results(props) {
   if (props.isLoading === true) {
-    return <p> LOADING </p>;
+    return <Loading text='One Moment' speed={100} />;
   }
 
   if (props.scores[0] === props.scores[1]) {
