@@ -4,6 +4,7 @@ var Link = ReactRouter.Link;
 var styles = require('../styles');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
 var UserDetails = require('./UserDetails');
+var MainContainer = require('./MainContainer');
 var PropTypes = React.PropTypes;
 
 function StartOver(props) {
@@ -20,16 +21,16 @@ function Results(props) {
   }
 
   if (props.scores[0] === props.scores[1]) {
-    return <div className='jumbotron col-sm-12 text-center' style={styles.transparentBg}>
+    return <MainContainer>
       <h1> It's a tie!</h1>
       <StartOver />
-    </div>;
+    </MainContainer>;
   }
 
   var winningIndex = props.scores[0] > props.scores[1] ? 0 : 1;
   var losingIndex = winningIndex === 0 ? 1 : 0;
 
-  return <div className='jumbotron col-sm-12 text-center' style={styles.transparentBg}>
+  return <MainContainer>
     <h1>Results</h1>
     <div className='col-sm-8 col-sm-offset-2'>
       <UserDetailsWrapper header='Winner'>
@@ -41,7 +42,7 @@ function Results(props) {
       </UserDetailsWrapper>
     </div>
     <StartOver />
-  </div>;
+  </MainContainer>;
 }
 
 Results.PropTypes = {
