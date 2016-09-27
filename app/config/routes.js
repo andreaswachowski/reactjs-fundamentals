@@ -5,7 +5,7 @@ var Route = ReactRouter.Route;
 var hashHistory = ReactRouter.hashHistory;
 var IndexRoute = ReactRouter.IndexRoute;
 var PromptContainer = require('../containers/PromptContainer');
-var ConfirmBattleContainer = require('../containers/ConfirmBattleContainer');
+import ConfirmBattleContainer from '../containers/ConfirmBattleContainer';
 var ResultsContainer = require('../containers/ResultsContainer');
 
 import Main from '../components/Main';
