@@ -17,12 +17,12 @@ var ConfirmBattleContainer = React.createClass({
   componentDidMount() {
     const {playerOne, playerTwo} = this.props.location.query;
     getPlayersInfo([playerOne, playerTwo])
-      .then(function(players) {
+      .then(players => {
         this.setState({
           isLoading: false,
           playersInfo: [players[0], players[1]]
         });
-      }.bind(this));
+      });
   },
 
   handleInitiateBattle() {
