@@ -1,5 +1,5 @@
-var axios = require('axios');
-var logCustomMessage = require('./logCustomMessage');
+import axios from 'axios';
+import logCustomMessage from './logCustomMessage';
 
 var clientId = 'YOUR_CLENT_ID';
 var secret = 'YOUR_SECRET_ID';
@@ -37,34 +37,31 @@ function calculateScores(players) {
   ];
 }
 
-var helpers = {
-  getPlayersInfo: function(players) {
-    return axios.all(players.map(function(username) {
-      return getUserInfo(username);
-    })).then(function(info) {
-      return info.map(function(user) {
-        return user.data;
-      });
-    }).catch(function(error) {
+export function getPlayersInfo(players) {
+  return axios.all(players.map(function(username) {
+    return getUserInfo(username);
+  })).then(function(info) {
+    return info.map(function(user) {
+      return user.data;
+    });
+  }).catch(function(error) {
+    return logCustomMessage(error.message, {
+      players: players,
+      error: error
+    });
+  });
+}
+
+export function battle(players) {
+  var playerOneData = getPlayersData(players[0]);
+  var playerTwoData = getPlayersData(players[1]);
+
+  return axios.all([playerOneData, playerTwoData])
+    .then(calculateScores)
+    .catch(function(error) {
       return logCustomMessage(error.message, {
         players: players,
         error: error
       });
     });
-  },
-  battle: function(players) {
-    var playerOneData = getPlayersData(players[0]);
-    var playerTwoData = getPlayersData(players[1]);
-
-    return axios.all([playerOneData, playerTwoData])
-      .then(calculateScores)
-      .catch(function(error) {
-        return logCustomMessage(error.message, {
-          players: players,
-          error: error
-        });
-      });
-  }
-};
-
-module.exports = helpers;
+}
