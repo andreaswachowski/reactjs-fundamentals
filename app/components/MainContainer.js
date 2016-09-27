@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '../styles';
+import {transparentBg} from '../styles';
 
 function MainContainer(props) {
-  return <div className='jumbotron col-sm-12 text-center' style={styles.transparentBg}>
+  return <div className='jumbotron col-sm-12 text-center' style={transparentBg}>
     {props.children}
   </div>;
 }
