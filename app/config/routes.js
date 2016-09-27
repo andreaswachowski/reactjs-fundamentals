@@ -1,9 +1,5 @@
-var React = require('react');
-var ReactRouter = require('react-router');
-var Router = ReactRouter.Router;
-var Route = ReactRouter.Route;
-var hashHistory = ReactRouter.hashHistory;
-var IndexRoute = ReactRouter.IndexRoute;
+import React from 'react';
+import {Router, Route, hashHistory, IndexRoute} from 'react-router';
 import PromptContainer from '../containers/PromptContainer';
 import ConfirmBattleContainer from '../containers/ConfirmBattleContainer';
 import ResultsContainer from '../containers/ResultsContainer';
@@ -22,4 +18,4 @@ var routes =
     </Route>
   </Router>;
 
-module.exports = routes;
+export default routes;
