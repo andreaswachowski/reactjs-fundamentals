@@ -13,12 +13,12 @@ var ResultsContainer = React.createClass({
   componentDidMount() {
     console.log(this.props.location.state.playersInfo);
     battle(this.props.location.state.playersInfo)
-      .then(function(scores) {
+      .then(scores => {
         this.setState({
           scores: scores,
           isLoading: false
         });
-      }.bind(this));
+      });
   },
 
   render() {
