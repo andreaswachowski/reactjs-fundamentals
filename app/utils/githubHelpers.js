@@ -38,12 +38,7 @@ function calculateScores(players) {
 export function getPlayersInfo(players) {
   return axios.all(players.map(username => getUserInfo(username)))
     .then(info => info.map(user => user.data))
-    .catch(function(error) {
-      return logCustomMessage(error.message, {
-        players,
-        error
-      });
-    });
+    .catch(error => logCustomMessage(error.message, {players, error}));
 }
 
 export function battle(players) {
@@ -52,10 +47,5 @@ export function battle(players) {
 
   return axios.all([playerOneData, playerTwoData])
     .then(calculateScores)
-    .catch(function(error) {
-      return logCustomMessage(error.message, {
-        players,
-        error
-      });
-    });
+    .catch(error => logCustomMessage(error.message, {players, error}));
 }
