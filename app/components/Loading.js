@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 
-var styles = {
+const styles = {
   container: {
     position: 'fixed',
     left: 0,
