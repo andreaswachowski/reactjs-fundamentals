@@ -4,7 +4,7 @@ var Link = ReactRouter.Link;
 var styles = require('../styles');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
 var UserDetails = require('./UserDetails');
-var MainContainer = require('./MainContainer');
+import MainContainer from './MainContainer';
 import Loading from './Loading';
 var PropTypes = React.PropTypes;
 
