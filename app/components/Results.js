@@ -1,12 +1,10 @@
-var React = require('react');
-var ReactRouter = require('react-router');
-var Link = ReactRouter.Link;
-var styles = require('../styles');
-var UserDetailsWrapper = require('./UserDetailsWrapper');
-var UserDetails = require('./UserDetails');
+import React, {PropTypes} from 'react';
+import {Link} from 'react-router';
+import styles from '../styles';
+import UserDetailsWrapper from './UserDetailsWrapper';
+import UserDetails from './UserDetails';
 import MainContainer from './MainContainer';
 import Loading from './Loading';
-var PropTypes = React.PropTypes;
 
 function StartOver(props) {
   return <div className='col-sm-12' style={styles.space}>
@@ -52,4 +50,4 @@ Results.PropTypes = {
   scores: PropTypes.array.isRequired
 };
 
-module.exports = Results;
+export default Results;
