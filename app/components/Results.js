@@ -5,7 +5,7 @@ var styles = require('../styles');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
 var UserDetails = require('./UserDetails');
 var MainContainer = require('./MainContainer');
-var Loading = require('./Loading');
+import Loading from './Loading';
 var PropTypes = React.PropTypes;
 
 function StartOver(props) {
