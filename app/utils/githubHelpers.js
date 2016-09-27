@@ -23,7 +23,7 @@ function getPlayersData(player) {
     .then(totalStars => (
       {
         followers: player.followers,
-        totalStars: totalStars
+        totalStars
       }
     ));
 }
@@ -40,8 +40,8 @@ export function getPlayersInfo(players) {
     .then(info => info.map(user => user.data))
     .catch(function(error) {
       return logCustomMessage(error.message, {
-        players: players,
-        error: error
+        players,
+        error
       });
     });
 }
@@ -54,8 +54,8 @@ export function battle(players) {
     .then(calculateScores)
     .catch(function(error) {
       return logCustomMessage(error.message, {
-        players: players,
-        error: error
+        players,
+        error
       });
     });
 }
