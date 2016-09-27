@@ -1,4 +1,4 @@
-var React = require('react');
+import React from 'react';
 import Prompt from '../components/Prompt';
 
 var PromptContainer = React.createClass({
@@ -46,4 +46,4 @@ var PromptContainer = React.createClass({
   }
 });
 
-module.exports = PromptContainer;
+export default PromptContainer;
