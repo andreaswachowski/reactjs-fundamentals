@@ -8,7 +8,7 @@ var PromptContainer = require('../containers/PromptContainer');
 var ConfirmBattleContainer = require('../containers/ConfirmBattleContainer');
 var ResultsContainer = require('../containers/ResultsContainer');
 
-var Main = require('../components/Main');
+import Main from '../components/Main';
 import Home from '../components/Home';
 
 var routes =
