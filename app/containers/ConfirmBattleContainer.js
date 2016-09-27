@@ -13,8 +13,8 @@ var ConfirmBattleContainer = React.createClass({
     };
   },
   componentDidMount: function() {
-    var query = this.props.location.query;
-    getPlayersInfo([query.playerOne, query.playerTwo])
+    const {playerOne, playerTwo} = this.props.location.query;
+    getPlayersInfo([playerOne, playerTwo])
       .then(function(players) {
         this.setState({
           isLoading: false,
