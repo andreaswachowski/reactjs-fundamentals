@@ -3,14 +3,14 @@ import logCustomMessage from './logCustomMessage';
 
 const clientId = 'YOUR_CLENT_ID';
 const secret = 'YOUR_SECRET_ID';
-const param = '?client_id=' + clientId + '&client_secret=' + secret;
+const param = `?client_id=${clientId}&client_secret=${secret}`;
 
 function getUserInfo(username) {
-  return axios.get('https://api.github.com/users/' + username + param);
+  return axios.get(`https://api.github.com/users/${username}${param}`);
 }
 
 function getRepos(username) {
-  return axios.get('https://api.github.com/users/' + username + '/repos' + param + '&per_page=100');
+  return axios.get(`https://api.github.com/users/${username}/repos${param}&per_page=100`);
 }
 
 function getTotalStars(repos) {
