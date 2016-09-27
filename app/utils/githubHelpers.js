@@ -1,9 +1,9 @@
 import axios from 'axios';
 import logCustomMessage from './logCustomMessage';
 
-var clientId = 'YOUR_CLENT_ID';
-var secret = 'YOUR_SECRET_ID';
-var param = '?client_id=' + clientId + '&client_secret=' + secret;
+const clientId = 'YOUR_CLENT_ID';
+const secret = 'YOUR_SECRET_ID';
+const param = '?client_id=' + clientId + '&client_secret=' + secret;
 
 function getUserInfo(username) {
   return axios.get('https://api.github.com/users/' + username + param);
@@ -53,8 +53,8 @@ export function getPlayersInfo(players) {
 }
 
 export function battle(players) {
-  var playerOneData = getPlayersData(players[0]);
-  var playerTwoData = getPlayersData(players[1]);
+  const playerOneData = getPlayersData(players[0]);
+  const playerTwoData = getPlayersData(players[1]);
 
   return axios.all([playerOneData, playerTwoData])
     .then(calculateScores)
