@@ -29,7 +29,7 @@ var PromptContainer = React.createClass({
       this.context.router.push({
         pathname: '/battle',
         query: {
-          playerOne: playerOne,
+          playerOne,
           playerTwo: username
         }
       });
