@@ -11,7 +11,6 @@ var ResultsContainer = React.createClass({
   },
 
   componentDidMount() {
-    console.log(this.props.location.state.playersInfo);
     battle(this.props.location.state.playersInfo)
       .then(scores => {
         this.setState({
